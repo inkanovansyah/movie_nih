@@ -6,25 +6,25 @@ import 'package:flutter/material.dart';
 /// the app to maintain a consistent look and feel.
 class AppColors {
   /// The primary color of the application.
-  static const primary = Color(0xffef233c);
+  static const primary = Color(0xff000000);
 
   /// The secondary color of the application.
-  static const secondary = Color(0xff272b30);
+  static const secondary = Color(0xff000000);
 
   /// The primary background color.
-  static const primaryBackground = Color(0xff1a1d1f);
+  static const primaryBackground = Color(0xffFFFFFF);
 
   /// The secondary background color.
-  static const secondaryBackground = Color(0xff272b30);
+  static const secondaryBackground = Color(0xffFFFFFF);
 
   /// The primary text color, typically used for body text.
   static const primaryText = Color(0xffa9aaac);
 
   /// The secondary text color, typically used for headers or on dark backgrounds.
-  static const secondaryText = Colors.white;
+  static const secondaryText = Color(0xff000000);
 
   /// The color used for text on primary buttons.
-  static const primaryBtnText = Colors.white;
+  static const primaryBtnText = Color(0xff42C83C);
 
   /// The color used for error messages or indicators.
   static const error = Colors.red;
