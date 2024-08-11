@@ -60,14 +60,12 @@ class TopRatedMoviesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TopRatedMoviesBloc, TopRatedMoviesState>(
       builder: (context, state) {
+        // Determine the number of items to display (up to 6)
+        final int displayCount = movies.length > 6 ? 6 : movies.length;
         return VerticalListView(
-          itemCount: movies.length + 1,
+          itemCount: displayCount,
           itemBuilder: (context, index) {
-            if (index < movies.length) {
-              return VerticalListViewCard(media: movies[index]);
-            } else {
-              return const LoadingIndicator();
-            }
+            return VerticalListViewCard(media: movies[index]);
           },
           addEvent: () {
             context

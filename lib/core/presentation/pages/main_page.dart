@@ -5,12 +5,19 @@ import 'package:movie_nih/core/resources/app_routes.dart';
 import 'package:movie_nih/core/resources/app_strings.dart';
 import 'package:movie_nih/core/resources/app_values.dart';
 
+/// A stateful widget that represents the main page of the application,
+/// containing a [BottomNavigationBar] and handling back navigation logic.
 class MainPage extends StatefulWidget {
+  /// Creates a [MainPage] widget.
+  ///
+  /// The [child] parameter is required and represents the content
+  /// to be displayed in the body of the page.
   const MainPage({
     Key? key,
     required this.child,
   }) : super(key: key);
 
+  /// The content to be displayed in the body of the page.
   final Widget child;
 
   @override
@@ -22,8 +29,16 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WillPopScope(
+        // Intercepts the back navigation to provide custom behavior.
         onWillPop: () async {
           final String location = GoRouterState.of(context).location;
+
+          // Allow default behavior if on an authentication-related path.
+          if (location.startsWith(authPaths)) {
+            return true;
+          }
+
+          // Navigate to the movies page if not currently on it.
           if (!location.startsWith(moviesPath)) {
             _onItemTapped(0, context);
           }
@@ -61,6 +76,13 @@ class _MainPageState extends State<MainPage> {
               size: AppSize.s20,
             ),
           ),
+          BottomNavigationBarItem(
+            label: AppStrings.favorite,
+            icon: Icon(
+              Icons.favorite,
+              size: AppSize.s20,
+            ),
+          ),
         ],
         currentIndex: _getSelectedIndex(context),
         onTap: (index) => _onItemTapped(index, context),
@@ -68,6 +90,9 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  /// Determines the selected index of the [BottomNavigationBar] based on the current route.
+  ///
+  /// Returns 0 for the movies path, 1 for TV shows, 2 for search, and 3 for the watchlist.
   int _getSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).location;
     if (location.startsWith(moviesPath)) {
@@ -85,6 +110,9 @@ class _MainPageState extends State<MainPage> {
     return 0;
   }
 
+  /// Handles navigation when a [BottomNavigationBar] item is tapped.
+  ///
+  /// Navigates to the appropriate route based on the [index] parameter.
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:

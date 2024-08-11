@@ -1,5 +1,7 @@
 class AppRoutes {
   static const String moviesRoute = 'movies';
+  static const String loginRoute = 'auth';
+  static const String favoriteRouto = 'auth';
   static const String movieDetailsRoute = 'movieDetails';
   static const String popularMoviesRoute = 'popularMovies';
   static const String topRatedMoviesRoute = 'topRatedMovies';
@@ -11,4 +13,5 @@ class AppRoutes {
 
   static const String searchRoute = 'search';
   static const String watchlistRoute = 'watchlist';
+  static const String favoriteRoute = 'favorite';
 }

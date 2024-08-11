@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:movie_nih/core/presentation/pages/login_page.dart';
 import 'package:movie_nih/core/presentation/pages/main_page.dart';
 import 'package:movie_nih/core/resources/app_routes.dart';
+import 'package:movie_nih/favorite/presntation/favorite.dart';
 import 'package:movie_nih/movies/presentation/views/movie_details_view.dart';
 import 'package:movie_nih/movies/presentation/views/movies_view.dart';
 import 'package:movie_nih/movies/presentation/views/popular_movies_view.dart';
@@ -13,6 +15,7 @@ import 'package:movie_nih/tv_shows/presentation/views/tv_show_details_view.dart'
 import 'package:movie_nih/tv_shows/presentation/views/tv_shows_view.dart';
 import 'package:movie_nih/watchlist/presentation/views/watchlist_view.dart';
 
+const String authPaths = '/login';
 const String moviesPath = '/movies';
 const String movieDetailsPath = 'movieDetails/:movieId';
 const String popularMoviesPath = 'popularMovies';
@@ -23,6 +26,7 @@ const String popularTVShowsPath = 'popularTVShows';
 const String topRatedTVShowsPath = 'topRatedTVShows';
 const String searchPath = '/search';
 const String watchlistPath = '/watchlist';
+const String favoritePath = '/favorite';
 
 class AppRouter {
   GoRouter router = GoRouter(
@@ -31,6 +35,13 @@ class AppRouter {
       ShellRoute(
         builder: (context, state, child) => MainPage(child: child),
         routes: [
+          GoRoute(
+            name: AppRoutes.loginRoute,
+            path: authPaths,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: LoginPage(),
+            ),
+          ),
           GoRoute(
             name: AppRoutes.moviesRoute,
             path: moviesPath,
@@ -107,6 +118,13 @@ class AppRouter {
             path: watchlistPath,
             pageBuilder: (context, state) => const NoTransitionPage(
               child: WatchlistView(),
+            ),
+          ),
+          GoRoute(
+            name: AppRoutes.favoriteRoute,
+            path: favoritePath,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: favorite(),
             ),
           ),
         ],
