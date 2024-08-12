@@ -22,14 +22,14 @@ Movie app made in Flutter with clean architecture using BLoC, Hive and the movie
 
 ## Screenshots
 <p>
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/01.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/02.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/03.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/04.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/05.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/06.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/07.png" width="250" />
-  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/08.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/1.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/2.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/3.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/4.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/5.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/6.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/7.png" width="250" />
+  <img src="https://github.com/inkanovansyah/movie_nih/screenshots/8.png" width="250" />
 </p>
 
 ## Installation
